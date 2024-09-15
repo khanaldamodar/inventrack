@@ -1,12 +1,5 @@
 <?php
-// require("05loginauth.php");
-session_start();
-if (!isset($_SESSION['username'])) {
-    header("Location: 05login.php");
-    exit();
-}
-
-
+require("auth.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">

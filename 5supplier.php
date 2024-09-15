@@ -1,4 +1,6 @@
-
+<?php
+require("auth.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -13,7 +15,7 @@
     <nav>
       <ul class="navbar">
         <li> <h1 style="color: black;">Inven<span style="color: rgb(247, 170, 70)">Track</span></h1></li>
-        <li><button class="logout-btn">Logout</button></li>
+        <li><button class="logout-btn"><a href="logout.php">Logout</a></button></li>
       </ul>
     </nav>
     <div class="container">
