@@ -1,6 +1,4 @@
-<?php
-require("05loginauth.php");
-?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>

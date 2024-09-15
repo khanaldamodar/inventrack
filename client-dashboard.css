@@ -23,6 +23,9 @@ nav{
     z-index: 1;
     width: 100%;
 }
+.logout-btn a{
+    text-decoration: none;
+}
 .logout-btn{
     background-color: #1E201E;
     color: #fff;
@@ -41,6 +44,7 @@ nav{
     background-color: #fff;
     color: #1E201E;
 }
+
 
 .container {
             display: flex;

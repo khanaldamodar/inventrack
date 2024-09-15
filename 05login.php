@@ -1,5 +1,6 @@
 <?php
 require 'db.php';
+session_start();
 ?>
 
 <!DOCTYPE html>
@@ -57,7 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         $hashed_password = $row['password'];
         if ($password == $hashed_password) {
             // Start a session and store user information
-              session_start();
+              
               $_SESSION['username'] = $username;
             // Redirect to a dashboard or home page
             

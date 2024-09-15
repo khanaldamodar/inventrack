@@ -1,4 +1,11 @@
 <?php
+// require("05loginauth.php");
+session_start();
+if (!isset($_SESSION['username'])) {
+    header("Location: 05login.php");
+    exit();
+}
+
 
 ?>
 <!DOCTYPE html>
@@ -14,7 +21,7 @@
     <nav>
       <ul class="navbar">
         <li> <h1 style="color: black;">Inven<span style="color: rgb(247, 170, 70)">Track</span></h1></li>
-        <li><button class="logout-btn">Logout</button></li>
+        <li><button class="logout-btn"><a href="logout.php">Logout</a></button></li>
       </ul>
     </nav>
     <div class="container">
