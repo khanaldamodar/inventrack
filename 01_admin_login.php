@@ -60,8 +60,37 @@ session_start();
         <button type="submit" name="submit">Login</button>
     </form>
     <?php
-   
-    ?>
+if ($_SERVER['REQUEST_METHOD'] == "POST") {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    // Using a prepared statement to prevent SQL injection
+    $stmt = $conn->prepare("SELECT admin_id, username, password FROM admins WHERE username = ?");
+    $stmt->bind_param("s", $username);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($result->num_rows > 0) {
+        $row = $result->fetch_assoc();
+        $hashed_password = $row['password'];
+        if ($password == $hashed_password) {
+            // Start a session and store user information
+              
+              $_SESSION['username'] = $username;
+            // Redirect to a dashboard or home page
+            
+              header("Location: 001admin-dashboard.php");
+            
+            // echo "done!!";
+            exit();
+        } else {
+            echo "<p style='color:red;'>Login failed. Invalid password.</p>";
+        }
+    } else {
+        echo "<p style='color:red;'>Login failed. User not found..</p>";
+    }
+        }
+        ?>
 
 </body>
 </html>
