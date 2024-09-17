@@ -14,14 +14,17 @@ require("auth.php");
     <nav>
       <ul class="navbar">
         <li> <h1>Inven<span style="color: rgb(247, 170, 70)">Track</span></h1></li>
-        <li><button class="logout-btn"><a href="01adminlogout.php">Logout</a></button></li>
+        <li><a style="color: black; text-decoration: none; font-size: 20px;" href="01_register_admin.php">create new Admin</a></li>
+        <li><button class="logout-btn"><a  href="01adminlogout.php">Logout</a></button></li>
       </ul>
     </nav>
+
 
 
     <div class="container">
     <div class="user-table">
         <h2>User Management</h2>
+        <br>
         <table>
             <thead>
                 <tr>

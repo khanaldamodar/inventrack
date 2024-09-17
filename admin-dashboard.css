@@ -41,6 +41,10 @@ nav{
     background-color: #fff;
     color: #1E201E;
 }
+a{
+    color: black;
+    text-decoration: none;
+}
 
 
         .user-table {

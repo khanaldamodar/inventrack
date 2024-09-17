@@ -73,7 +73,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
         $hashed_password = $row['password'];
-        if ($password == $hashed_password) {
+        $h_password = password_verify($password, $hashed_password);
+        if ($password == $h_password) {
             // Start a session and store user information
               
               $_SESSION['username'] = $username;
